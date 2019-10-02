@@ -1,4 +1,6 @@
-var publidDir = __dirname + '/public';
+const path = require('path');
+
+const publidDir = path.join(__dirname, '/public' );
 module.exports = {
   entry: [
     './src/index.js'
