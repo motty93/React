@@ -1,7 +1,18 @@
 import React from 'react'
 
-// export default () => <h1>Hello World</h1>
 export default class extends React.Component {
+  state = {
+    email: '',
+    password: ''
+  }
+
+  onChangeEmail = e => this.setState({ email: e.target.value })
+  onChangePassword = e => this.setState({ password: e.target.value })
+
+  onSubmit = () => {
+    alert(JSON.stringify(this.state))
+  }
+
   render() {
     return (
       <div
