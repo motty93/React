@@ -26,10 +26,18 @@ export default class extends React.Component {
       >
         <h1>Sign Up</h1>
         <div>Email</div>
-        <input type="text" />
+        <input
+          type="text"
+          value={this.state.email}
+          onChange={this.onChangeEmail}
+        />
         <div>Password</div>
-        <input type="password" />
-        <button>submit</button>
+        <input
+          type="password"
+          value={this.state.password}
+          onChange={this.onChangePassword}
+        />
+        <button onClick={this.onSubmit}>submit</button>
       </div>
     )
   }
