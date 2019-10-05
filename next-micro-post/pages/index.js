@@ -3,14 +3,19 @@ import React from 'react'
 export default class extends React.Component {
   state = {
     email: '',
-    password: ''
+    password: '',
+    isPosting: false,
   }
 
   onChangeEmail = e => this.setState({ email: e.target.value })
   onChangePassword = e => this.setState({ password: e.target.value })
 
   onSubmit = () => {
-    alert(JSON.stringify(this.state))
+    this.setState({ isPosting: true })
+    setTimeout(() => {
+      alert(JSON.stringify(this.state))
+      this.setState({ isPosting: false })
+    }, 2000)
   }
 
   render() {
@@ -38,6 +43,7 @@ export default class extends React.Component {
           onChange={this.onChangePassword}
         />
         <button onClick={this.onSubmit}>submit</button>
+        <div>{this.state.isPosting ? 'isPosting...' : ''}</div>
       </div>
     )
   }
