@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 
 export default class extends React.Component {
   state = {
@@ -10,12 +11,15 @@ export default class extends React.Component {
   onChangeEmail = e => this.setState({ email: e.target.value })
   onChangePassword = e => this.setState({ password: e.target.value })
 
-  onSubmit = () => {
+  onSubmit = async () => {
     this.setState({ isPosting: true })
-    setTimeout(() => {
-      alert(JSON.stringify(this.state))
-      this.setState({ isPosting: false })
-    }, 2000)
+    const { email, password } = this.state
+    const result = await axios.post(
+      'url',
+      { email, password }
+    )
+    console.log(result)
+    this.setState({ isPosting: false })
   }
 
   render() {
