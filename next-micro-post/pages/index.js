@@ -38,6 +38,7 @@ export default class extends React.Component {
         <input
           type="text"
           value={this.state.email}
+          // onChange={(e) => this.setState({ email: e.target.value })}
           onChange={this.onChangeEmail}
         />
         <div>Password</div>
