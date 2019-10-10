@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import UserName from './username'
 
 class App extends React.Component {
   state = {
@@ -12,7 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>{this.state.name}</h1>
+        <UserName name={this.state.name} />
         <input type="text" onChange={this.onChangeText} />
       </div>
     )
