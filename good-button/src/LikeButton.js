@@ -2,7 +2,9 @@ import React from 'react';
 
 class LikeButton extends React.Component {
   state = {
-    hovered: false
+    hovered: false,
+    count: 999,
+    liked: false
   }
 
   styles() {
@@ -60,6 +62,12 @@ class LikeButton extends React.Component {
 
   onMouseEnter = () => this.setState({hovered: true});
   onMouseLeave = () => this.setState({hovered: false});
+  onClick = () => {
+    this.setState({
+      count: this.state.count + (this.state.liked ? -1 : 1),
+      liked: !this.state.liked
+    })
+  }
 
   render() {
     const styles = this.styles();
@@ -71,9 +79,10 @@ class LikeButton extends React.Component {
         <span
           style={likeStyle}
           onMouseEnter={this.onMouseEnter}
-          onMouseLeave={this.onMouseLeave}>いいね！</span>
+          onMouseLeave={this.onMouseLeave}
+          onClick={this.onClick}>{this.state.liked ? '✔' : ''}いいね！</span>
         <span style={styles.counter}>
-          <span style={styles.counterBefore}>{" "}</span>999
+          <span style={styles.counterBefore}>{" "}</span>{this.state.count}
         </span>
       </span>
     );
