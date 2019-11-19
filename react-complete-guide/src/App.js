@@ -18,8 +18,18 @@ const app = props => {
     setPersonState ({
       persons: [
         { name: newName, age: personState.persons[0].age + 1 },
-        { name: 'manu', age: personState.persons[1].age + 1 },
-        { name: 'john', age: personState.persons[2].age + 1 },
+        { name: personState.persons[1].name, age: personState.persons[1].age + 1 },
+        { name: personState.persons[2].name, age: personState.persons[2].age + 1 },
+      ]
+    })
+  }
+
+  const nameChangeHandler = (e) => {
+    setPersonState ({
+      persons: [
+        { name: personState.persons[0].name, age: personState.persons[0].age },
+        { name: e.target.value, age: personState.persons[1].age },
+        { name: personState.persons[2].name, age: personState.persons[2].age },
       ]
     })
   }
@@ -36,7 +46,8 @@ const app = props => {
       <Person
         name={personState.persons[1].name}
         age={personState.persons[1].age}
-        click={onClickSwitchButton.bind(this, 'Max')}>My Hobbies: training</Person>
+        click={onClickSwitchButton.bind(this, 'Max')}
+        changed={nameChangeHandler}>My Hobbies: training</Person>
       <Person
         name={personState.persons[2].name}
         age={personState.persons[2].age} />
