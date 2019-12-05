@@ -29,10 +29,10 @@ const App = props => {
         <li></li>
         <li></li>
         <UserInput />
-        <UserOutput />
-        <UserOutput />
-        <UserOutput />
-        <UserOutput />
+        <UserOutput userName={userNameState.userName}/>
+        <UserOutput userName={userNameState.userName}/>
+        <UserOutput userName={userNameState.userName}/>
+        <UserOutput userName={userNameState.userName}/>
       </ol>
     </div>
   );
