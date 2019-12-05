@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 import { UserInput } from './UserInput/UserInput'
 import UserOutput from './UserOutput/UserOutput'
 
+const App = props => {
+  const [userNameState, setUserNameState] = useState({
+    userName: 'supermax'
+  })
 
-function App() {
+  const userNameChangedHandler = (e) => {
+    setUserNameState({
+      userName: e.target.value
+    })
+  }
+
   return (
     <div className="App">
       <ol>
