@@ -1,9 +1,9 @@
 import React from 'react'
 
-const userOutput = () => {
+const userOutput = (props) => {
   return (
     <div>
-      <p>なんかテキトーなテキスト</p>
+      <p>なんかテキトーなテキスト: {props.userName}</p>
       <p>上書きします</p>
     </div>
   )
