@@ -5,13 +5,13 @@ import { UserInput } from './UserInput/UserInput'
 import UserOutput from './UserOutput/UserOutput'
 
 const App = props => {
-  const [userNameState, setUserNameState] = useState({
-    userName: 'supermax'
+  const [usernameState, setUsernameState] = useState ({
+    username: 'supermax'
   })
 
-  const userNameChangedHandler = (e) => {
-    setUserNameState({
-      userName: e.target.value
+  const usernameChangedHandler = (e) => {
+    setUsernameState ({
+      username: e.target.value
     })
   }
 
@@ -28,11 +28,8 @@ const App = props => {
         <li></li>
         <li></li>
         <li></li>
-        <UserInput />
-        <UserOutput userName={userNameState.userName}/>
-        <UserOutput userName={userNameState.userName}/>
-        <UserOutput userName={userNameState.userName}/>
-        <UserOutput userName={userNameState.userName}/>
+        <UserInput changed={usernameChangedHandler}/>
+        <UserOutput username={usernameState.username}/>
       </ol>
     </div>
   );
