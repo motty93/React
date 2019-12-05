@@ -32,6 +32,10 @@ const App = props => {
           changed={usernameChangedHandler}
           currentName={usernameState.username} />
         <UserOutput username={usernameState.username}/>
+        <UserOutput username={usernameState.username}/>
+        <UserOutput username={usernameState.username}/>
+        <UserOutput username={usernameState.username}/>
+        <UserOutput username={usernameState.username}/>
       </ol>
     </div>
   );
