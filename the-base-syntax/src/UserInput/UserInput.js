@@ -1,5 +1,5 @@
 import React from 'react'
 
-export const UserInput = () => {
-  return <input type="text" />
+export const UserInput = (props) => {
+  return <input type="text" onChange={props.changed} />
 }
