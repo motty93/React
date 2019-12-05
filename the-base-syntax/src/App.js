@@ -28,7 +28,9 @@ const App = props => {
         <li></li>
         <li></li>
         <li></li>
-        <UserInput changed={usernameChangedHandler}/>
+        <UserInput
+          changed={usernameChangedHandler}
+          currentName={usernameState.username} />
         <UserOutput username={usernameState.username}/>
       </ol>
     </div>
