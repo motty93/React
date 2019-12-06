@@ -73,22 +73,7 @@ const app = props => {
       <button
         style={style}
         onClick={togglePersonsHandler}>Toggle Persons</button>
-      {
-        showPersonsState.show === true ?
-        <div>
-          <Person
-            name={personState.persons[0].name}
-            age={personState.persons[0].age} />
-          <Person
-            name={personState.persons[1].name}
-            age={personState.persons[1].age}
-            click={onClickSwitchButton.bind(this, 'Max')}
-            changed={nameChangeHandler}>My Hobbies: training</Person>
-          <Person
-            name={personState.persons[2].name}
-            age={personState.persons[2].age} />
-        </div> : null
-      }
+      {persons}
     </div>
   );
 }
