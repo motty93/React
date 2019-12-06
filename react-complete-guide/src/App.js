@@ -47,6 +47,25 @@ const app = props => {
     cursor: 'pointer'
   }
 
+  let persons = null
+  if (showPersonsState.show) {
+    persons = (
+      <div>
+        <Person
+          name={personState.persons[0].name}
+          age={personState.persons[0].age} />
+        <Person
+          name={personState.persons[1].name}
+          age={personState.persons[1].age}
+          click={onClickSwitchButton.bind(this, 'Max')}
+          changed={nameChangeHandler}>My Hobbies: training</Person>
+        <Person
+          name={personState.persons[2].name}
+          age={personState.persons[2].age} />
+      </div>
+    )
+  }
+
   return (
     <div className="App">
       <h1>Hi, I'm a React App</h1>
