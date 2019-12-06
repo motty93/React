@@ -8,11 +8,11 @@ const app = props => {
       { name: 'Max', age: 29 },
       { name: 'manu', age: 22 },
       { name: 'john', age: 20 },
-    ],
-    // otherState: 'some other value' -> useStateへ
+    ]
   })
 
-  const [otherState, setOtherState] = useState('some other value')
+  // const [otherState, setOtherState] = useState('some other value')
+  const [showPersonsState, setShowPersonsState] = useState({ show: false })
 
   const onClickSwitchButton = (newName) => {
     setPersonState ({
@@ -32,6 +32,11 @@ const app = props => {
         { name: personState.persons[2].name, age: personState.persons[2].age },
       ]
     })
+  }
+
+  const togglePersonsHandler = () => {
+    const doesShow = showPersonsState.show
+    setShowPersonsState({ show: !doesShow })
   }
 
   const style = {
