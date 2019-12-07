@@ -51,6 +51,11 @@ const app = props => {
   if (showPersonsState.show) {
     persons = (
       <div>
+        {personState.persons.map(person => {
+          return <Person
+            name={person.name}
+            age={person.age} />
+        })}
         <Person
           name={personState.persons[0].name}
           age={personState.persons[0].age} />
