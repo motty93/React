@@ -34,6 +34,11 @@ const app = props => {
     })
   }
 
+  const deletePersonHandler = (personIndex) => {
+    let newPersons = personState.persons.filter((_person, index) => index != personIndex)
+    setPersonState({persons: newPersons})
+  }
+
   const togglePersonsHandler = () => {
     const doesShow = showPersonsState.show
     setShowPersonsState({ show: !doesShow })
@@ -51,22 +56,12 @@ const app = props => {
   if (showPersonsState.show) {
     persons = (
       <div>
-        {personState.persons.map(person => {
+        {personState.persons.map((person, index) => {
           return <Person
+            click={() => deletePersonHandler(index)}
             name={person.name}
             age={person.age} />
         })}
-        <Person
-          name={personState.persons[0].name}
-          age={personState.persons[0].age} />
-        <Person
-          name={personState.persons[1].name}
-          age={personState.persons[1].age}
-          click={onClickSwitchButton.bind(this, 'Max')}
-          changed={nameChangeHandler}>My Hobbies: training</Person>
-        <Person
-          name={personState.persons[2].name}
-          age={personState.persons[2].age} />
       </div>
     )
   }
