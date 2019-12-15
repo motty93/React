@@ -14,22 +14,6 @@ const app = props => {
   // const [otherState, setOtherState] = useState('some other value')
   const [showPersonsState, setShowPersonsState] = useState({show: false})
 
-  const onClickSwitchButton = newName => {
-    setPersonState({
-      persons: [
-        {name: newName, age: personState.persons[0].age + 1},
-        {
-          name: personState.persons[1].name,
-          age: personState.persons[1].age + 1,
-        },
-        {
-          name: personState.persons[2].name,
-          age: personState.persons[2].age + 1,
-        },
-      ],
-    })
-  }
-
   const nameChangeHandler = e => {
     setPersonState({
       persons: [
