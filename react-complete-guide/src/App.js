@@ -5,30 +5,23 @@ import {Person} from './Person/Person'
 const app = props => {
   const [personState, setPersonState] = useState({
     persons: [
-      {name: 'Max', age: 29},
-      {name: 'manu', age: 22},
-      {name: 'john', age: 20},
+      {id: 'asdf', name: 'Max', age: 29},
+      {id: 'vbasdfga', name: 'manu', age: 22},
+      {id: 'ttdsfghhhh', name: 'john', age: 20},
     ],
   })
 
   // const [otherState, setOtherState] = useState('some other value')
   const [showPersonsState, setShowPersonsState] = useState({show: false})
 
-  const nameChangeHandler = e => {
-    setPersonState({
-      persons: [
-        {name: personState.persons[0].name, age: personState.persons[0].age},
-        {name: e.target.value, age: personState.persons[1].age},
-        {name: personState.persons[2].name, age: personState.persons[2].age},
-      ],
-    })
-  }
-
   const deletePersonHandler = personIndex => {
-    let newPersons = personState.persons.filter(
-      (_person, index) => index != personIndex,
-    )
-    setPersonState({persons: newPersons})
+    // const persons = [...personState.persons]
+    const persons = personState.persons
+    persons.splice(personIndex, 1)
+    // let newPersons = personState.persons.filter(
+    //   (_person, index) => index != personIndex,
+    // )
+    setPersonState({persons: persons})
   }
 
   const togglePersonsHandler = () => {
@@ -54,6 +47,7 @@ const app = props => {
               click={() => deletePersonHandler(index)}
               name={person.name}
               age={person.age}
+              key={person.id}
             />
           )
         })}
