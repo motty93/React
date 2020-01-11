@@ -56,3 +56,12 @@ const multiply = (val1: number, val2: number): number => {
 };
 
 console.log(multiply(23, 1));
+
+// 定義する際は引数は何でも良い
+let myFunctionType: (val1: number, val2: number) => number;
+// myFunctionType = sayHello;
+// myFunctionType();
+myFunctionType = multiply;
+console.log(myFunctionType(23, 99));
+
+
