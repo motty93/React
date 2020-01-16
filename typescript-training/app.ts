@@ -125,3 +125,21 @@ const printInfo = (...info: [string, number]) => {
   console.log(info[0] + ':' + info[1]);
 };
 console.log(printInfo('taro', 20));
+
+// クラスとプロパティ
+class Person {
+  // public name: string;
+  // private place: string;
+  // protected age: number;
+  constructor(
+    public name: string,
+    private place: string,
+    protected age: number,
+  ) {
+    this.name = name;
+    this.place = place;
+    this.age = age;
+  }
+}
+const person = new Person('たろう', 'tokyo', 30);
+console.log(person);
