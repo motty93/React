@@ -153,3 +153,20 @@ class Helpers {
 }
 console.log(2 * Helpers.PI);
 console.log(Helpers.calcCircum(93));
+
+// singleton
+class OnlyOne {
+  private static instance: OnlyOne;
+  private constructor(public name: string) {}
+  static getInstance() {
+    if (!OnlyOne.instance) {
+      OnlyOne.instance = new OnlyOne('the only one');
+    }
+    return OnlyOne.instance;
+  }
+}
+// エラーになる
+// let wrong = new OnlyOne('the only one');
+
+let right = OnlyOne.getInstance();
+console.log(right.name);
