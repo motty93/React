@@ -113,4 +113,15 @@ const countDown = (start: number = 10): void => {
   }
   console.log('終了');
 };
-countDown()
+countDown();
+
+// レスト演算子（スプレッド演算子）
+const makeArray = (...args: number[]) => {
+  return args;
+};
+console.log(makeArray(1, 2));
+
+const printInfo = (...info: [string, number]) => {
+  console.log(info[0] + ':' + info[1]);
+};
+console.log(printInfo('taro', 20));
