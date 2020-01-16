@@ -102,5 +102,15 @@ let thisYear: number | string = '2019';
 thisYear = 2019;
 
 const checkLength = (str: string | null): number => {
-  return str != null ? str.length : 0
+  return str != null ? str.length : 0;
 };
+
+// デフォルト引数
+const countDown = (start: number = 10): void => {
+  while (start > 0) {
+    console.log(start);
+    start--;
+  }
+  console.log('終了');
+};
+countDown()
