@@ -96,3 +96,11 @@ let complex2: Complex = {
     return this.data;
   },
 };
+
+// union型
+let thisYear: number | string = '2019';
+thisYear = 2019;
+
+const checkLength = (str: string | null): number => {
+  return str != null ? str.length : 0
+};
