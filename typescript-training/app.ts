@@ -64,4 +64,20 @@ let myFunctionType: (val1: number, val2: number) => number;
 myFunctionType = multiply;
 console.log(myFunctionType(23, 99));
 
+let userData: {
+  name: string;
+  age: number;
+} = {
+  name: 'たろう',
+  age: 20,
+};
+// 追加もできない
+// userData['place'] = 'tokyo';
 
+let Complex: {
+  data: number[];
+  output: (all: boolean) => number[];
+} = {
+  data: [123, 3, -1],
+  output: function(all: boolean): number[] { return this.data },
+};
