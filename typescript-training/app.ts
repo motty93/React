@@ -143,3 +143,13 @@ class Person {
 }
 const person = new Person('たろう', 'tokyo', 30);
 console.log(person);
+
+// 静的メンバ
+class Helpers {
+  static PI: number = 3.12;
+  static calcCircum(diameter: number) {
+    this.PI * diameter;
+  }
+}
+console.log(2 * Helpers.PI);
+console.log(Helpers.calcCircum(93));
