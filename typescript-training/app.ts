@@ -79,5 +79,20 @@ let Complex: {
   output: (all: boolean) => number[];
 } = {
   data: [123, 3, -1],
-  output: function(all: boolean): number[] { return this.data },
+  output: function(all: boolean): number[] {
+    return this.data;
+  },
+};
+
+// alias
+type Complex = {
+  data: number[];
+  output: (all: boolean) => number[];
+};
+
+let complex2: Complex = {
+  data: [1231, 123, 4213],
+  output: function(flag: boolean): number[] {
+    return this.data;
+  },
 };
