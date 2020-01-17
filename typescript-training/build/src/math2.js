@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 // 名前空間
 var MyMath;
 (function (MyMath) {
@@ -7,5 +6,4 @@ var MyMath;
     MyMath.calcRect = function (height, width) {
         return height * width;
     };
-})(MyMath = exports.MyMath || (exports.MyMath = {}));
-exports.default = MyMath2;
+})(MyMath || (MyMath = {}));

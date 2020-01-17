@@ -3,5 +3,3 @@ namespace MyMath {
   const PI: number = 3.14;
   export const calcCircum = (diameter: number): number => diameter * PI;
 }
-
-export default MyMath;
