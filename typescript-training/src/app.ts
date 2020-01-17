@@ -171,3 +171,6 @@ class OnlyOne {
 let right = OnlyOne.getInstance();
 console.log(right.name);
 // right.name = "変更しました"
+
+console.log(MyMath.calcCircum(3));
+console.log(MyMath.calcRect(20, 3));
