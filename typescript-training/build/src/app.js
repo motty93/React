@@ -1,4 +1,5 @@
 "use strict";
+// トリプルスラッシュ・ディレクティブ
 /// <reference path='math1.ts'/>
 /// <reference path='math2.ts'/>
 var myName = 'もてぃ';
@@ -145,5 +146,7 @@ var OnlyOne = /** @class */ (function () {
 var right = OnlyOne.getInstance();
 console.log(right.name);
 // right.name = "変更しました"
-console.log(MyMath.calcCircum(3));
+console.log(MyMath.Circum.calcCircum(3));
 console.log(MyMath.calcRect(20, 3));
+var math = MyMath.Circum;
+console.log(math.calcCircum(2));

@@ -2,6 +2,9 @@
 // 名前空間
 var MyMath;
 (function (MyMath) {
-    var PI = 3.14;
-    MyMath.calcCircum = function (diameter) { return diameter * PI; };
+    var Circum;
+    (function (Circum) {
+        var PI = 3.14;
+        Circum.calcCircum = function (diameter) { return diameter * PI; };
+    })(Circum = MyMath.Circum || (MyMath.Circum = {}));
 })(MyMath || (MyMath = {}));

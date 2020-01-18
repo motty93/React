@@ -181,21 +181,3 @@ console.log(MyMath.calcRect(20, 3));
 
 import math = MyMath.Circum;
 console.log(math.calcCircum(2));
-
-// interface 仮引数に宣言
-interface NamedPerson {
-  name: string,
-}
-const greet = (person: NamedPerson): void => {
-  console.log('こんにちは' + person.name + '!');
-};
-const person2 = {
-  name: 'たろう',
-  age: 30,
-};
-const changeName = (person: NamedPerson) => {
-  person.name = 'gonbe';
-};
-greet(person2);
-changeName(person2);
-greet(person2);
