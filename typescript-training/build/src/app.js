@@ -114,8 +114,8 @@ var Person = /** @class */ (function () {
     }
     return Person;
 }());
-var person = new Person('たろう', 'tokyo', 30);
-console.log(person);
+var taro = new Person('たろう', 'tokyo', 30);
+console.log(taro);
 // 静的メンバ
 var Helpers = /** @class */ (function () {
     function Helpers() {

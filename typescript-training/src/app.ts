@@ -145,8 +145,8 @@ class Person {
     this.age = age;
   }
 }
-const person = new Person('たろう', 'tokyo', 30);
-console.log(person);
+const taro = new Person('たろう', 'tokyo', 30);
+console.log(taro);
 
 // 静的メンバ
 class Helpers {
