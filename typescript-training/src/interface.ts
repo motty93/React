@@ -23,3 +23,19 @@ const changeName = (person: NamedPerson) => {
 greet(person);
 changeName(person);
 greet(person);
+
+// interfaceを使う場合はimplements
+// 継承する場合はextends
+class Person2 implements NamedPerson {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+  greet(lastName: string) {
+    console.log('こんにちは' + lastName + this.name);
+  }
+}
+
+const myPerson = new Person2('誰かさん');
+greet(myPerson);
+myPerson.greet('どこかの');
