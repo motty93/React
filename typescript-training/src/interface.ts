@@ -39,3 +39,26 @@ class Person2 implements NamedPerson {
 const myPerson = new Person2('誰かさん');
 greet(myPerson);
 myPerson.greet('どこかの');
+
+interface DoubleValues {
+  (num1: number, num2: number): number;
+}
+
+let myDoubleFunction: DoubleValues;
+myDoubleFunction = (val1: number, val2: number) => (val1 + val2) * 2;
+console.log(myDoubleFunction(10, 20));
+
+// interfaceも継承できる
+interface AgedPerson extends NamedPerson {
+  age: number;
+}
+const oldPerson: AgedPerson = {
+  name: 'johndoe',
+  greet(lastName: string) {
+    console.log('こんにちは' + lastName + this.name);
+  },
+  age: 35,
+};
+console.log(oldPerson);
+
+// interfaceはコンパイル時に削除されてしまう
