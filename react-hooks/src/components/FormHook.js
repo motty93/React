@@ -3,6 +3,13 @@ import React, { useState } from 'react'
 export const FormHook = () => {
   const [name, setName] = useState({ firstName: '', lastName: '' })
 
+  const setFirstNameHandler = e => {
+    // useStateが複数ある場合、他のstateに影響を与えないようにスプレッド演算子でstateを展開する
+    setName({ ...name, firstName: e.target.value })
+  }
+  const setLastNameHandler = e => {
+    setName({ ...name, lastName: e.target.value })
+  }
   return (
     <div>
       <h1>フォームの処理</h1>
@@ -14,12 +21,12 @@ export const FormHook = () => {
         <input
           type="text"
           value={name.firstName}
-          onChange={e => setName({...name, firstName: e.target.value })}
+          onChange={setFirstNameHandler}
         />
         <input
           type="text"
           value={name.lastName}
-          onChange={e => setName({...name, lastName: e.target.value })}
+          onChange={setLastNameHandler}
         />
       </form>
       <div>{JSON.stringify(name)}</div>
