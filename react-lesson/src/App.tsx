@@ -5,7 +5,9 @@ import { Child } from './components/Child'
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Child message={'test'}/>
+      <Child message={'test'}>
+        <p>子コンポーネントを渡す</p>
+     </Child>
     </div>
   )
 }

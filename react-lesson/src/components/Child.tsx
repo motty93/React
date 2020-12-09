@@ -1,4 +1,3 @@
-
 import React from 'react'
 
 type Props = {
@@ -9,7 +8,7 @@ type Props = {
 export const Child: React.FC<Props> = ({ message, children }) => {
   return (
     <div>
-      { children }
+      {children}
       <p>{message}</p>
     </div>
   )
