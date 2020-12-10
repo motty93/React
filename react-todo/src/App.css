@@ -125,6 +125,11 @@
   border-bottom-color: #956270;
 }
 
+.btn.is-disabled {
+  background-color: #ddd;
+  border-bottom-color: #ddd;
+}
+
 .checkbox-input {
   display: none;
 }

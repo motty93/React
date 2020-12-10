@@ -36,7 +36,15 @@ export const TaskInput: React.FC<Props> = ({ tasks, setTasks }) => {
           value={inputTitle}
           onChange={handleInputChange}
         />
-        <button className="btn is-primary" onClick={handleSubmit}>追加</button>
+        <button
+          className={`btn ${
+            inputTitle.length > 0 ? 'is-primary' : 'is-disabled'
+          }`}
+          onClick={handleSubmit}
+          disabled={inputTitle.length == 0}
+        >
+          追加
+        </button>
       </div>
     </div>
   )
