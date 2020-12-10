@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { TaskList } from './components/TaskList'
 import { TaskInput } from './components/TaskInput'
+import { Modal } from './components/Modal'
 import { Task } from './Types'
 import './App.css'
 
@@ -24,6 +25,7 @@ const App: React.FC = () => {
     <div>
       <TaskInput tasks={tasks} setTasks={setTasks} />
       <TaskList tasks={tasks} setTasks={setTasks} />
+      <Modal/>
     </div>
   )
 }

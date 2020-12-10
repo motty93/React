@@ -100,7 +100,6 @@
   padding: 2px 5px;
 }
 
-
 .btn {
   font-size: 15px;
   cursor: pointer;
@@ -141,7 +140,7 @@
 }
 
 .checkbox-label::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 2px;
@@ -157,7 +156,7 @@
 }
 
 .done .checkbox-label::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 0;
@@ -185,6 +184,77 @@
   transition: background-color 700ms;
 }
 .fade-exit-active label {
+  opacity: 0.3;
+  transition: opacity 700ms;
+}
+
+.fade-enter-active {
+  background-color: #f4ffb0;
+  transition: background-color 300ms ease;
+}
+
+.fade-enter-done {
+  transition: background-color 1s;
+}
+
+.fade-exit {
+  background-color: #ffacbf;
+}
+
+.fade-exit-active {
+  background-color: transparent;
+  transition: background-color 700ms;
+}
+
+.fade-exit-active label {
   opacity: .3;
   transition: opacity 700ms;
+}
+
+
+.modal {
+  background: rgba(0,0,0,0.4);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-foot {
+  padding-top: 0;
+}
+
+.modal-show-enter-active {
+  opacity: 0;
+}
+
+.modal-show-enter-done {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.modal-show-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.modal-show-enter-active .modal-inner {
+  transform: scale(.9);
+}
+
+.modal-show-enter-done .modal-inner {
+  transform: scale(1);
+  transition: transform 300ms;
+}
+
+.modal-show-exit-active .modal-inner {
+  transform: scale(.9);
+  transition: transform 300ms;
 }
