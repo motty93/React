@@ -1,30 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { TaskList } from './components/TaskList'
 import { TaskInput } from './components/TaskInput'
 import { Modal } from './components/Modal'
-import { Task } from './Types'
 import './App.css'
 
-const initialState: Task[] = [
-  {
-    id: 2,
-    title: 'つぎのTODO',
-    done: false
-  },
-  {
-    id: 1,
-    title: '最初のTODO',
-    done: true
-  }
-]
-
 const App: React.FC = () => {
-  const [tasks, setTasks] = useState(initialState)
-
   return (
     <div>
-      <TaskInput tasks={tasks} setTasks={setTasks} />
-      <TaskList tasks={tasks} setTasks={setTasks} />
+      <TaskInput />
+      <TaskList />
       <Modal/>
     </div>
   )
