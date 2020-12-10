@@ -1,51 +1,40 @@
 import React, { useState } from 'react'
-import { Task } from '../Types'
+import { addTask } from '../modules/tasksModule'
+import { useDispatch } from 'react-redux'
+import { useForm } from 'react-hook-form'
 
-type Props = {
-  tasks: Task[]
-  setTasks: React.Dispatch<React.SetStateAction<Task[]>>
+type FormData = {
+  title: string
 }
 
-export const TaskInput: React.FC<Props> = ({ tasks, setTasks }) => {
-  const [inputTitle, setInputTitle] = useState('')
-  const [count, setCount] = useState(tasks.length + 1)
+export const TaskInput: React.FC = () => {
+  const dispatch = useDispatch()
+  const { register, handleSubmit, errors, reset } = useForm<FormData>()
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputTitle(e.target.value)
-  }
-
-  const handleSubmit = () => {
-    setCount(count + 1)
-
-    const newTask: Task = {
-      id: count,
-      title: inputTitle,
-      done: false
-    }
-
-    setTasks([newTask, ...tasks])
-    setInputTitle('')
+  // formタグで囲んでるところで動く
+  const handleOnSubmit = (data: FormData) => {
+    dispatch(addTask(data.title))
+    reset()
   }
 
   return (
-    <div className="input-form">
+    <form onSubmit={handleSubmit(handleOnSubmit)} className="input-form">
       <div className="inner">
         <input
           type="text"
+          name="title"
           className="input"
-          value={inputTitle}
-          onChange={handleInputChange}
+          placeholder="TODOを入力して下さい。"
+          ref={register({
+            required: 'タイトルは必ず入力してください。',
+            minLength: { value: 3, message: 'タイトルは５文字以上で入力して下さい。' },
+            maxLength: { value: 10, message: 'タイトルは１０文字以下で入力して下さい。' },
+          })}
         />
-        <button
-          className={`btn ${
-            inputTitle.length > 0 ? 'is-primary' : 'is-disabled'
-          }`}
-          onClick={handleSubmit}
-          disabled={inputTitle.length == 0}
-        >
-          追加
-        </button>
+        <button className="btn is-primary">追加</button>
+        {errors.title &&
+        <span className="error-message">{errors.title.message}</span>}
       </div>
-    </div>
+    </form>
   )
 }
