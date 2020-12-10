@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { addTask } from '../modules/tasksModule'
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
@@ -27,13 +27,20 @@ export const TaskInput: React.FC = () => {
           placeholder="TODOを入力して下さい。"
           ref={register({
             required: 'タイトルは必ず入力してください。',
-            minLength: { value: 3, message: 'タイトルは５文字以上で入力して下さい。' },
-            maxLength: { value: 10, message: 'タイトルは１０文字以下で入力して下さい。' },
+            minLength: {
+              value: 3,
+              message: 'タイトルは５文字以上で入力して下さい。'
+            },
+            maxLength: {
+              value: 10,
+              message: 'タイトルは１０文字以下で入力して下さい。'
+            }
           })}
         />
         <button className="btn is-primary">追加</button>
-        {errors.title &&
-        <span className="error-message">{errors.title.message}</span>}
+        {errors.title && (
+          <span className="error-message">{errors.title.message}</span>
+        )}
       </div>
     </form>
   )
