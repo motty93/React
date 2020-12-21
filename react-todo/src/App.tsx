@@ -3,6 +3,9 @@ import { TaskList } from './components/TaskList'
 import { TaskInput } from './components/TaskInput'
 import { Modal } from './components/Modal'
 import './App.css'
+import Data from './data.json'
+
+type Users = typeof Data
 
 let array1 = [0, 1, 'asdf']
 interface NAME {
@@ -153,6 +156,8 @@ const gen8 = funcGen3({ price: 10 })
 const funcGen4 = <T extends Props>(props: T) => {
   return { value: props.price }
 }
+
+const 
 
 const App: React.FC = () => {
   return (
