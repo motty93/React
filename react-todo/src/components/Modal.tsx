@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 
 export const Modal: React.FC = () => {
-  const [isShow, setIsShow] = useState(false)
+  const [isShow, setIsShow] = useState<boolean>(false)
 
   return (
     <div style={{ textAlign: 'center', paddingTop: '200px' }}>
@@ -11,10 +11,10 @@ export const Modal: React.FC = () => {
       </button>
       <CSSTransition
         in={isShow}
-    timeout={{
-      enter: 0,
-        exit: 500,
-    }}
+        timeout={{
+          enter: 0,
+          exit: 500
+        }}
         unmountOnExit
         classNames="modal-show"
       >
