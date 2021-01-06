@@ -18,7 +18,7 @@ const data = {
       borderColor: '#008b8b',
       pointBackgroundColor: '#008b8b',
       pointBorderColor: '#fff',
-      data: [100,50,30,90,50,70,40]
+      data: [100, 50, 30, 90, 50, 70, 40]
     },
     {
       label: 'Person B',
@@ -26,13 +26,17 @@ const data = {
       borderColor: '#ff1493',
       pointBackgroundColor: '#ff1493',
       pointBorderColor: '#fff',
-      data: [10,30,100,10,100,70,60]
+      data: [10, 30, 100, 10, 100, 70, 60]
     }
   ]
 }
 
 const RadarPlot: React.FC = () => {
-  return <div><Radar data={data}/></div>
+  return (
+    <div>
+      <Radar data={data} />
+    </div>
+  )
 }
 
 export default RadarPlot
