@@ -5,15 +5,17 @@ import LinePlot from './components/LinePlot'
 import PiePlot from './components/PiePlot'
 import RadarPlot from './components/RadarPlot'
 import BubblePlot from './components/BubblePlot'
+import MaterialUI from './components/MaterialUI'
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <LinePlot />
-      <PiePlot />
-      <BarPlot />
-      <RadarPlot />
-      <BubblePlot />
+      {/*<LinePlot />
+        <PiePlot />
+        <BarPlot />
+        <RadarPlot />
+        <BubblePlot />*/}
+      <MaterialUI/>
     </div>
   )
 }
