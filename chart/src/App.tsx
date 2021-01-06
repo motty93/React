@@ -1,10 +1,10 @@
 import React from 'react'
 import './App.css'
-import BarPlot from './components/BarPlot'
-import LinePlot from './components/LinePlot'
-import PiePlot from './components/PiePlot'
-import RadarPlot from './components/RadarPlot'
-import BubblePlot from './components/BubblePlot'
+// import BarPlot from './components/BarPlot'
+// import LinePlot from './components/LinePlot'
+// import PiePlot from './components/PiePlot'
+// import RadarPlot from './components/RadarPlot'
+// import BubblePlot from './components/BubblePlot'
 import MaterialUI from './components/MaterialUI'
 
 const App: React.FC = () => {
@@ -15,7 +15,7 @@ const App: React.FC = () => {
         <BarPlot />
         <RadarPlot />
         <BubblePlot />*/}
-      <MaterialUI/>
+      <MaterialUI />
     </div>
   )
 }
