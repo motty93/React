@@ -5,10 +5,11 @@ import { newTask } from './taskSlice'
 export const TaskInput = () => {
   const dispatch = useDispatch()
   const [editTitle, setEditTitle] = useState('')
+
   const handleTitleChange = e => {
     setEditTitle(e.target.value)
   }
-  const handleSubmit = e => {
+  const onSubmit = e => {
     e.preventDefault()
     if (editTitle !== '') {
       dispatch(newTask(editTitle))
@@ -19,12 +20,12 @@ export const TaskInput = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={onSubmit}>
       <input
         type="text"
         value={editTitle}
         onChange={handleTitleChange}
-        placeholder="Please type in."i
+        placeholder="Please type in."
       />
       <button>新規タスク</button>
     </form>
