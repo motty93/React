@@ -5,10 +5,11 @@ import { TaskItem } from './TaskItem'
 
 export const TaskList = () => {
   const tasks = useSelector(selectTasks)
+  const taskItems = tasks.map((task) => <TaskItem key={task.id} task={task} />)
 
   return (
     <>
-      {tasks.map((task) => <TaskItem key={task.id} task={task} />)}
+      {taskItems}
     </>
   )
 }

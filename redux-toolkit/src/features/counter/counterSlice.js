@@ -14,8 +14,12 @@ export const incrementAsync = createAsyncThunk(
   }
 )
 
+const name = {
+  name: 'counter'
+}
+
 export const counterSlice = createSlice({
-  name: 'counter',
+  ...name,
   initialState,
   // stateに変更を与える関数を書く
   reducers: {
