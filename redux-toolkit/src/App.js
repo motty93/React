@@ -1,7 +1,8 @@
 import React from 'react'
 import { Counter } from './features/counter/Counter'
-import { TaskList } from './features/task/TaskList'
 import { TaskInput } from './features/task/TaskInput'
+import { TaskList } from './features/task/TaskList'
+import { Fetch } from './features/fetch/Fetch'
 import './App.css'
 
 export const App = () => (
@@ -10,6 +11,7 @@ export const App = () => (
       <Counter />
       <TaskInput />
       <TaskList />
+      <Fetch />
     </header>
   </div>
 )
