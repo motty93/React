@@ -8,7 +8,7 @@ export const Fetch = () => {
   const usersList = users.map((user) => <div key={user.id}>{user.email}</div>)
 
   useEffect(() => {
-    dispatch(fetchAsyncGet)
+    dispatch(fetchAsyncGet())
   }, [dispatch])
 
   return (

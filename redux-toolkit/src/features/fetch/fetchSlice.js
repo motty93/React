@@ -21,7 +21,7 @@ const fetchSlice = createSlice({
   initialState,
   reducers: {},
   // createAsyncThunkを使用する場合はこっちに書く
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     // action.payloadはfetchAsyncGetのreturnが入る
     builder.addCase(fetchAsyncGet.fulfilled, (state, action) => {
       return {
@@ -29,6 +29,14 @@ const fetchSlice = createSlice({
         users: action.payload,
       }
     })
+    // builder.addCase(fetchAsyncGet.pending, (state, action) => {
+    //   alert('pending!')
+    //   debugger
+    // })
+    // builder.addCase(fetchAsyncGet.rejected, (state, action) => {
+    //   alert('rejected!')
+    //   debugger
+    // })
   }
 })
 
